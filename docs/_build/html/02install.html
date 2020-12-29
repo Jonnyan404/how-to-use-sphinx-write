@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.安装 &mdash; how-to-use-sphinx-write 0.1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="1.简介" href="01jianjie.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> how-to-use-sphinx-write
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01jianjie.html">1.简介</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2.安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.1准备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2.2编写文章</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#md">2.3更改主题和添加md支持</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#github">3.与GitHub联动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">4.后记</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">how-to-use-sphinx-write</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>2.安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/02install.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>2.安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>2.1准备<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>安装之前假设你已经安装好了python3</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>sphinx版本:3.4</p></li>
+<li><p>以下以Linux命令为主,window可以手动创建目录,然后在cmd执行pip和初始化即可.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#安装sphinx/主题/markdown</span>
+pip install sphinx recommonmark sphinx_rtd_theme
+<span class="c1">#创建一个目录docs</span>
+mkdir docs
+<span class="c1">#切换至docs目录</span>
+<span class="nb">cd</span> docs
+<span class="c1">#初始化一个sphinx</span>
+sphinx-quickstart
+</pre></div>
+</div>
+<p>在执行命令<code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code>的时候，会让你输入配置，除了以下几个个性化配置外，其他的都可以按照默认的来（回车默认配置）。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; Separate <span class="nb">source</span> and build directories <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:n
+&gt; Project name: how-to-use-sphinx
+&gt; Author name<span class="o">(</span>s<span class="o">)</span>: jonnyan404
+&gt; Project release <span class="o">[]</span>: <span class="m">0</span>.1
+&gt; Project language <span class="o">[</span>en<span class="o">]</span>: zh_CN
+</pre></div>
+</div>
+<p>执行完毕后，就可以看见创建的工程文件</p>
+<ul class="simple">
+<li><p>_build：文件夹，当你执行<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>的时候，生成的html静态文件都存放在这里</p></li>
+<li><p>_static：文件夹：图片,js等存放地址</p></li>
+<li><p>_templates：文件夹:模板文件存放</p></li>
+<li><p>make.bat：bat脚本</p></li>
+<li><p>Makefile:编译文件</p></li>
+<li><p>index.rst:索引文件,文章目录大纲</p></li>
+<li><p>conf.py:配置文件</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>2.2编写文章<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>在docs目录下新建hello.rst,内容如下:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">hello,world</span>
+<span class="gh">=============</span>
+</pre></div>
+</div>
+<p>如果会markdown语法,无需学习rst语法,可参考文末语法转换网站.</p>
+<p><code class="docutils literal notranslate"><span class="pre">index.rst</span></code>修改如下:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.. toctree::
+   :maxdepth: <span class="m">2</span>
+
+   hello
+</pre></div>
+</div>
+<p>然后在docs目录下执行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>,进入 <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> 目录后用浏览器打开 <code class="docutils literal notranslate"><span class="pre">index.html</span></code></p>
+</div>
+<div class="section" id="md">
+<h2>2.3更改主题和添加md支持<a class="headerlink" href="#md" title="永久链接至标题">¶</a></h2>
+<p>vim conf.py #更改如下配置:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
+<span class="nv">extensions</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;recommonmark&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>然后再次运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> 即可.
+关于markdown的用法形式与rst一样,直接更换后缀并在文件内已markdown语法写内容即可.</p>
+</div>
+</div>
+<div class="section" id="github">
+<h1>3.与GitHub联动<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h1>
+<p>上传代码至GitHub仓库,然后去 <a class="reference external" href="https://readthedocs.org/">https://readthedocs.org/</a> 注册账号,并关联GitHub仓库.
+然后需要在GitHub仓库根目录下,增加一个名称为 <code class="docutils literal notranslate"><span class="pre">.readthedocs.yml</span></code> 的配置文件:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># .readthedocs.yml</span>
+<span class="c1"># Read the Docs configuration file</span>
+<span class="c1"># See https://docs.readthedocs.io/en/stable/config-file/v2.html for details</span>
+
+<span class="c1"># Required</span>
+version: <span class="m">2</span>
+
+<span class="c1"># Build documentation in the docs/ directory with Sphinx</span>
+sphinx:
+  configuration: docs/conf.py
+
+<span class="c1"># Build documentation with MkDocs</span>
+<span class="c1">#mkdocs:</span>
+<span class="c1">#  configuration: mkdocs.yml</span>
+
+<span class="c1"># Optionally build your docs in additional formats such as PDF</span>
+formats:
+  - pdf
+
+<span class="c1"># Optionally set the version of Python and requirements required to build your docs</span>
+python:
+  version: <span class="m">3</span>.7
+  install:
+    - requirements: docs/requirements.txt
+</pre></div>
+</div>
+<p>再去 <code class="docutils literal notranslate"><span class="pre">docs</span></code> 目录下,新建一个名称为 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> 的文件,在这个文件内增加你所使用的包名称.
+例如我的是:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sphinx
+sphinx-rtd-theme
+recommonmark
+</pre></div>
+</div>
+<p>如果以上两个文件不添加,那么自动构建出来的文章,与你在本地的生成的会不一致,因为 readthedocs 网站默认使用mkdocs来构建.</p>
+</div>
+<div class="section" id="id4">
+<h1>4.后记<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/zh_CN/latest/usage/configuration.html">conf.py配置详解</a></p></li>
+<li><p><a class="reference external" href="https://zh-sphinx-doc.readthedocs.io/en/latest/markup/index.html">中文sphinx使用手册</a></p></li>
+<li><p><a class="reference external" href="https://pandoc.org/try/">语法转换网站</a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="01jianjie.html" class="btn btn-neutral float-left" title="1.简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, jonnyan404
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
